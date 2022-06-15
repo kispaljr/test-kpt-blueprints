@@ -5,5 +5,5 @@ metadata:
   namespace: example
 spec:
   hard:
-    cpu: "40"
-    memory: 40G
+    cpu: "50"
+    memory: 50G

@@ -1,14 +1,30 @@
-apiVersion: kpt.dev/v1
-kind: Kptfile
+# Head of Kptfile
+
+#apiVersion:
+apiVersion: kpt.dev/v1 # apiVersion
+kind: Kptfile #kind
 metadata:
+  # a comment here
   name: simple
   annotations:
+    # a comment there
     config.kubernetes.io/local-config: "true"
+  labels: {"test-key": "test-value"} #  let's test a different map style
 info:
-  description: sample description
+  description: |
+    Helloworld Simple Test Package
+
+    This is used to test the KRM functions and PackageVariants
+    This is multiline string.
+pipeline: # this is actually a null value, not a map
+# status comment 1
 status:
-  conditions:
-  - type: Rendered
-    status: "True"
-    message: Rendered successfully
-    reason: Rendered
+  conditions: # status comment 2
+  # not indented list style
+  - type: SucceededTest # this is only a test condition, shouldn't influence readiness
+    status: "True" # condition status
+    message: "Package is ready" #condition message
+    reason: "Package is ready" # condition reason
+    # reason tail
+
+# and an empty line at the end

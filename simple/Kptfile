@@ -6,3 +6,9 @@ metadata:
     config.kubernetes.io/local-config: "true"
 info:
   description: sample description
+status:
+  conditions:
+  - type: Rendered
+    status: "True"
+    message: Rendered successfully
+    reason: Rendered

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-simple
+  namespace: default # kpt-set: ${targetNamespace}
+  labels:
+    app: helloworld-simple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-simple
+  template:
+    metadata:
+      labels:
+        app: helloworld-simple
+    # spec:
+    spec: # spec
+      # initContainers:
+      initContainers: #initContainers
+      # not-indented list style
+      - name: first # name
+        # image
+        image: example.com/helloworld:1.0.7 # kpt-set: ${init_image}
+      containers:
+      # indented list style
+      - name: main
+        image: example.com/helloworld:1.0.7 # kpt-set: ${image}

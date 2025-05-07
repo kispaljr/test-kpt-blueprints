@@ -1,5 +1,3 @@
-# Head of Kptfile
-
 #apiVersion:
 apiVersion: kpt.dev/v1 # apiVersion
 kind: Kptfile #kind
@@ -26,5 +24,7 @@ status:
     message: "Package is ready" #condition message
     reason: "Package is ready" # condition reason
     # reason tail
-
-# and an empty line at the end
+  - type: Rendered
+    status: "True"
+    message: Rendered successfully
+    reason: Rendered
